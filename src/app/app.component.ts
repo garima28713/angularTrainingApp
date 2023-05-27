@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angularTrainingApp';
+  isListView : boolean = true;
+  name = 'Garima Sharma';
+  company = 'TCS';
+  experience = '3.7';
+  skills =['Angular','React JS','Node JS','HTML','CSS']
+
+  toggleView(){
+    this.isListView= !this.isListView
+  }
 }
