@@ -1,14 +1,19 @@
-<button (click)="toggleView()">
+<!-- <button (click)="toggleView()">
   Switch to {{ isListView === true ? "Grid" : "List" }}
 </button>
 
 <div class="container" *ngIf="isListView; else gridView">
   <ul>
-    <li>Employee:  {{ name }}</li>
-    <li>Company name:  {{ company }}</li>
-    <li>Years of experience:  {{ experience }}</li>
-    <li>Technical skills:  
-      <ul *ngFor="let skillList of skills">{{ skillList }}</ul>
+    <li>Employee: {{ name }}</li>
+    <li>Company name: {{ company }}</li>
+    <li>Years of experience: {{ experience }}</li>
+    <li>
+      Technical skills:
+      <ul *ngFor="let skillList of skills">
+        {{
+          skillList
+        }}
+      </ul>
     </li>
   </ul>
 </div>
@@ -37,3 +42,23 @@
     </tr>
   </table>
 </ng-template>
+ -->
+
+ <app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-9">
+      <app-listing
+        [products]="latestProducts"
+        (onSelect)="addedToCart($event)"
+        [color]="'black'"
+      ></app-listing>
+    </div>
+    <div class="col-3">
+      <ul>
+        <li *ngFor="let item of showAddedProducts">{{ item.name }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
