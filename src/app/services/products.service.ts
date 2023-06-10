@@ -1,16 +1,11 @@
-import { Component } from '@angular/core';
-import { ProductInterface } from './interfaces/product-interface';
+import { Injectable } from '@angular/core';
+import { ProductInterface } from '../interfaces/product-interface';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+@Injectable({
+  providedIn: 'root',
 })
-export class AppComponent {
-
-  showAddedProducts: ProductInterface[] = [];
-
-  latestProducts = [
+export class ProductsService {
+  topProducts: ProductInterface[] = [
     {
       id: 1,
       name: 'Potatoes - Yukon Gold, 80 Ct',
@@ -92,84 +87,4 @@ export class AppComponent {
       thumbnail: 'http://dummyimage.com/250x250.png/cc0000/ffffff',
     },
   ];
-
-  /* topProducts = [
-    {
-      id: 1,
-      name: 'Wine - Shiraz Wolf Blass Premium',
-      price: 88,
-      description:
-        'risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante',
-    },
-    {
-      id: 2,
-      name: 'Pasta - Linguini, Dry',
-      price: 77,
-      description:
-        'luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam',
-    },
-    {
-      id: 3,
-      name: 'Beets',
-      price: 45,
-      description:
-        'lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend',
-    },
-    {
-      id: 4,
-      name: 'Chocolate - Chips Compound',
-      price: 38,
-      description:
-        'a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate',
-    },
-    {
-      id: 5,
-      name: 'Oil - Shortening - All - Purpose',
-      price: 97,
-      description:
-        'turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor',
-    },
-    {
-      id: 6,
-      name: 'Beer - Mcauslan Apricot',
-      price: 36,
-      description:
-        'quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus',
-    },
-    {
-      id: 7,
-      name: 'Lettuce - Lambs Mash',
-      price: 7,
-      description: 'vivamus in felis eu sapien cursus vestibulum proin eu mi',
-    },
-    {
-      id: 8,
-      name: 'Hummus - Spread',
-      price: 95,
-      description:
-        'in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes',
-    },
-    {
-      id: 9,
-      name: 'Corn - On The Cob',
-      price: 39,
-      description:
-        'cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam',
-    },
-    {
-      id: 10,
-      name: 'Water Chestnut - Canned',
-      price: 93,
-      description:
-        'lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit',
-    },
-  ]; */
-
-  removeItem(deleteItem: object){
-    console.log(deleteItem)
-  }
-  
-  addedToCart(product: ProductInterface) {
-    this.showAddedProducts.push(product);
-  }
 }

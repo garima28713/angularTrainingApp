@@ -1,62 +1,25 @@
-<!-- <button (click)="toggleView()">
-  Switch to {{ isListView === true ? "Grid" : "List" }}
-</button>
-
-<div class="container" *ngIf="isListView; else gridView">
-  <ul>
-    <li>Employee: {{ name }}</li>
-    <li>Company name: {{ company }}</li>
-    <li>Years of experience: {{ experience }}</li>
-    <li>
-      Technical skills:
-      <ul *ngFor="let skillList of skills">
-        {{
-          skillList
-        }}
-      </ul>
-    </li>
-  </ul>
-</div>
-<ng-template #gridView>
-  <table>
-    <tr>
-      <td>Employee:</td>
-      <td>{{ name }}</td>
-    </tr>
-    <tr>
-      <td>Company name:</td>
-      <td>{{ company }}</td>
-    </tr>
-    <tr>
-      <td>Years of experience:</td>
-      <td>{{ experience }}</td>
-    </tr>
-    <tr>
-      <td>Technical skills:</td>
-      <td>
-        <tr *ngFor="let skillList of skills; let i = index">
-          <td>{{ i + 1 }}</td>
-          <td>{{ skillList }}</td>
-        </tr>
-      </td>
-    </tr>
-  </table>
-</ng-template>
- -->
-
- <app-header></app-header>
-<div class="container">
+<app-header></app-header>
+<div class="container-fluid mt-5">
   <div class="row">
-    <div class="col-9">
+    <div class="col-8">
       <app-listing
-        [products]="latestProducts"
         (onSelect)="addedToCart($event)"
         [color]="'black'"
       ></app-listing>
     </div>
-    <div class="col-3">
+    <div class="col-4">
       <ul>
-        <li *ngFor="let item of showAddedProducts">{{ item.name }}</li>
+        <li *ngFor="let item of showAddedProducts">
+          <label class="p-4">{{ item.name }}</label>
+          <button
+            type="button"
+            class="btn btn-outline-danger"
+            (click)="removeItem(item)"
+          >
+            Delete
+            <img src="/assets/trash3-fill.svg" alt="Bootstrap" height="21px" />
+          </button>
+        </li>
       </ul>
     </div>
   </div>
