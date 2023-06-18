@@ -7,10 +7,7 @@ import { ProductInterface } from './interfaces/product-interface';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-
-  showAddedProducts: ProductInterface[] = [];
-
-  latestProducts = [
+  /*  latestProducts = [
     {
       id: 1,
       name: 'Potatoes - Yukon Gold, 80 Ct',
@@ -91,7 +88,7 @@ export class AppComponent {
         'augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse',
       thumbnail: 'http://dummyimage.com/250x250.png/cc0000/ffffff',
     },
-  ];
+  ]; */
 
   /* topProducts = [
     {
@@ -165,11 +162,9 @@ export class AppComponent {
     },
   ]; */
 
-  removeItem(deleteItem: object){
-    console.log(deleteItem)
-  }
+  // addedProduct = {};
   
-  addedToCart(product: ProductInterface) {
-    this.showAddedProducts.push(product);
-  }
+  // addedToCart(product: ProductInterface) {
+  //   this.addedProduct = product;
+  // }
 }

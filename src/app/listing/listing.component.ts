@@ -9,16 +9,16 @@ import { ProductsService } from '../services/products.service';
 })
 export class ListingComponent implements OnInit {
   products: ProductInterface[] = [];
+  showAddedProducts : ProductInterface[] = [];
   @Input() color: string = 'blue';
-  @Output() onSelect = new EventEmitter<ProductInterface>();
+  // @Output() onSelect = new EventEmitter<ProductInterface>();
 
-  constructor(private productsService: ProductsService) {
+  constructor(productsService: ProductsService) {
     this.products = productsService.topProducts;
   }
   addToCart(product: ProductInterface) {
-    this.onSelect.emit(product);
+    // this.onSelect.emit(product);
+    this.showAddedProducts.push(product)
   }
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 }

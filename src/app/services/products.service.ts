@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 import { ProductInterface } from '../interfaces/product-interface';
-
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
+  constructor(private http: HttpClient){
+
+  }
+
   topProducts: ProductInterface[] = [
     {
       id: 1,
@@ -87,4 +91,8 @@ export class ProductsService {
       thumbnail: 'http://dummyimage.com/250x250.png/cc0000/ffffff',
     },
   ];
+
+  // removeProduct(obj){
+  //   this.http.get('/obj')
+  // }
 }
